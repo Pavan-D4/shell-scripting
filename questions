@@ -36,6 +36,21 @@ Here’s a set of basic shell scripting questions that cover a wide range of fun
    - Write a script that creates an empty file named `notes.txt`, changes its permissions to make it readable and writable only by the owner, and then verifies the permissions.
 
    - **Commands covered**: `touch`, `chmod`, `ls -l`
+  ans #!/bin/bash
+
+      # Change to the desired directory
+      cd /home/ec2-user || { echo "Failed to change directory"; exit 1; }
+
+      # Create an empty file named 'notes.txt'
+      touch notes.txt
+
+      # Change the file's permissions to be readable and writable only by the owner
+      chmod 600 notes.txt
+
+      # Verify the file's permissions
+      echo "Verifying permissions for notes.txt:"
+      ls -l notes.txt
+      echo "Script execution completed."
 
 3. **Copy, Move, and Rename Files**:
    - Write a script that copies a file named `source.txt` to `destination.txt`. Then, move `destination.txt` to the `backup` directory created earlier and rename it to `backup.txt`.
