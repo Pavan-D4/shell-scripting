@@ -151,6 +151,31 @@ echo "Search completed."
 
    - **Commands covered**: `wc`
 
+#!/bin/bash
+
+# Check if the file notes.txt exists
+if [ ! -f "notes.txt" ]; then
+  echo "Error: notes.txt file not found!"
+  exit 1
+fi
+
+# Count the number of lines, words, and characters in notes.txt
+echo "Counting lines, words, and characters in notes.txt..."
+
+lines=$(wc -l < notes.txt)
+words=$(wc -w < notes.txt)
+characters=$(wc -m < notes.txt)
+
+# Display the results
+echo "Lines: $lines"
+echo "Words: $words"
+echo "Characters: $characters"
+
+echo "Count completed."
+
+
+
+
 7. **Sorting and Uniqueness**:
    - Write a script that sorts the contents of a file named `items.txt` alphabetically and removes any duplicate lines. Save the result to a new file named `unique_items.txt`.
 
