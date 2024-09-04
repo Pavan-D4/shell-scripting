@@ -57,10 +57,66 @@ Here’s a set of basic shell scripting questions that cover a wide range of fun
 
    - **Commands covered**: `cp`, `mv`, `rename`
 
+#!/bin/bash
+
+# Define the source and destination filenames
+source_file="source.txt"
+destination_file="destination.txt"
+backup_dir="backup"
+backup_file="backup.txt"
+
+# Ensure source.txt exists
+if [ ! -f "$source_file" ]; then
+    echo "Error: $source_file does not exist."
+    exit 1
+fi
+
+# Copy source.txt to destination.txt
+cp "$source_file" "$destination_file"
+echo "$source_file copied to $destination_file."
+
+# Ensure the backup directory exists
+if [ ! -d "$backup_dir" ]; then
+    echo "Backup directory $backup_dir does not exist, creating it now."
+    mkdir "$backup_dir"
+fi
+
+# Move and rename destination.txt to the backup directory as backup.txt
+mv "$destination_file" "$backup_dir/$backup_file"
+echo "$destination_file moved to $backup_dir and renamed to $backup_file."
+
+echo "Script completed successfully."
+
+
+
+
 4. **Delete Files and Directories**:
    - Write a script that deletes all files in the current directory that end with `.log`. Then, delete the `backup` directory created earlier if it is empty.
 
    - **Commands covered**: `rm`, `rmdir`
+#!/bin/bash
+
+# Delete all .log files in the current directory
+echo "Deleting .log files in the current directory..."
+rm -f *.log
+
+# Check if the backup directory exists
+if [ -d "backup" ]; then
+  echo "Checking if the backup directory is empty..."
+
+  # Delete the backup directory if it is empty
+  if [ -z "$(ls -A backup)" ]; then
+    echo "Backup directory is empty. Deleting the directory..."
+    rmdir backup
+  else
+    echo "Backup directory is not empty. It will not be deleted."
+  fi
+else
+  echo "Backup directory does not exist."
+fi
+
+echo "Script completed."
+
 
 ### **Text Processing**
 
