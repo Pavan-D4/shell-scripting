@@ -125,6 +125,27 @@ echo "Script completed."
 
    - **Commands covered**: `grep`
 
+#!/bin/bash
+
+# Check if the file system.log exists
+if [ ! -f "system.log" ]; then
+  echo "Error: system.log file not found!"
+  exit 1
+fi
+
+# Search for the word "error" in the system.log file (case-insensitive)
+echo "Searching for the word 'error' in system.log..."
+grep -i "error" system.log
+
+# Check if grep found any matches
+if [ $? -ne 0 ]; then
+  echo "No 'error' found in system.log."
+fi
+
+echo "Search completed."
+
+
+
 6. **Count Lines, Words, and Characters**:
    - Write a script that counts the number of lines, words, and characters in a file named `notes.txt`.
 
