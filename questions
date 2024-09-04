@@ -181,6 +181,29 @@ echo "Count completed."
 
    - **Commands covered**: `sort`, `uniq`
 
+#!/bin/bash
+
+# Check if the file items.txt exists
+if [ ! -f "items.txt" ]; then
+  echo "Error: items.txt file not found!"
+  exit 1
+fi
+
+# Sort the contents of items.txt alphabetically and remove duplicates
+echo "Sorting and removing duplicates from items.txt..."
+sort items.txt | uniq > unique_items.txt
+
+# Check if the operation was successful
+if [ $? -eq 0 ]; then
+  echo "The sorted unique items have been saved to unique_items.txt."
+else
+  echo "An error occurred during the sorting and deduplication process."
+  exit 1
+fi
+
+
+
+
 8. **Text Replacement**:
    - Write a script that replaces all occurrences of the word "foo" with "bar" in a file named `data.txt` and saves the result to `new_data.txt`.
 
