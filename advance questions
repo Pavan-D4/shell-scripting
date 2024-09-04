@@ -1,0 +1,137 @@
+Here are some advanced shell scripting questions designed to challenge your knowledge and skills. These questions cover topics like complex text processing, advanced automation, system administration, cloud infrastructure management, security, and performance optimization.
+
+### **Complex Text Processing and Data Manipulation**
+
+1. **Dynamic Log Rotation and Compression**:
+   - Write a script that monitors a directory for log files larger than 100MB. When a file exceeds this size, rotate the log (rename the current log file), compress the rotated log using `gzip`, and start a new log file. Implement the log rotation with a limit on the number of retained log files (e.g., keep only the last 5 log files).
+
+2. **Advanced `sed` and `awk` Processing**:
+   - Write a script that reads a large CSV file and performs multiple operations in a single pass using `awk`:
+     - Extract specific columns based on headers.
+     - Perform calculations on numeric columns (e.g., calculate the average and standard deviation).
+     - Generate a summary report in a different format (e.g., JSON or XML).
+
+3. **Stream Processing with Pipes**:
+   - Write a script that reads a continuous data stream (e.g., from a network socket or a tailing log file) and processes each line as it arrives. The script should filter out irrelevant data, perform real-time aggregation (e.g., counting occurrences of specific events), and output the results periodically (every minute).
+
+### **System Administration and Automation**
+
+4. **Automated System Recovery**:
+   - Write a script that continuously monitors critical system services (e.g., `httpd`, `mysqld`, etc.). If a service stops running, the script should attempt to restart it. If the restart fails multiple times, the script should trigger an alert (e.g., send an email or an SMS) and attempt a system reboot if the service is still down.
+
+5. **Advanced Backup and Restore**:
+   - Write a script that performs incremental backups of a directory to a remote server using `rsync`. The script should maintain a history of backups, allowing the user to restore files from any previous backup. Implement encryption for the backup files and ensure the backup process can resume if interrupted.
+
+6. **Custom Package Management**:
+   - Write a script that automates the installation, configuration, and verification of custom software packages on multiple servers. The script should:
+     - Detect the target operating system and version.
+     - Download and verify the package's integrity using checksums.
+     - Install dependencies and configure the software according to predefined templates.
+     - Verify that the software is correctly installed and running, logging the process in detail.
+
+### **Cloud Infrastructure and DevOps**
+
+7. **Multi-Cloud Resource Management**:
+   - Write a script that manages resources across multiple cloud providers (AWS, Azure, GCP). The script should:
+     - Deploy a set of VMs across these providers.
+     - Set up a load balancer that distributes traffic between the VMs, regardless of their cloud provider.
+     - Automatically scale the number of VMs based on CPU usage across the cluster, ensuring the VMs are evenly distributed across all providers.
+
+8. **Dynamic Infrastructure Scaling**:
+   - Write a script that automatically scales a Kubernetes cluster based on custom metrics (e.g., response times, error rates). The script should:
+     - Monitor the metrics in real-time.
+     - Add or remove nodes from the cluster dynamically using the cloud provider's API.
+     - Adjust the resource allocation for specific pods based on their current load.
+
+9. **Automated Disaster Recovery Simulation**:
+   - Write a script that simulates a disaster recovery scenario in a cloud environment. The script should:
+     - Automatically failover services to a secondary region or availability zone.
+     - Validate that the failover was successful by running automated tests against the services.
+     - Roll back the failover to the primary region once the primary region is operational again.
+     - Document the entire process, including metrics like downtime, time to recover, and any issues encountered.
+
+### **Security and Compliance**
+
+10. **Automated Security Audits**:
+    - Write a script that performs a comprehensive security audit of a Linux server. The script should:
+      - Check for common vulnerabilities (e.g., open ports, outdated software, weak passwords).
+      - Ensure that all security patches are applied.
+      - Validate that firewall rules are correctly configured.
+      - Generate a report with recommendations for improving the server's security posture.
+
+11. **Dynamic Secrets Management**:
+    - Write a script that securely manages and rotates API keys and passwords across multiple environments. The script should:
+      - Store secrets in a secure vault (e.g., HashiCorp Vault or AWS Secrets Manager).
+      - Automatically rotate secrets according to a schedule.
+      - Update configurations and services with the new secrets without downtime.
+      - Ensure that old secrets are securely revoked and deleted.
+
+12. **Automated Compliance Reporting**:
+    - Write a script that collects system and application logs, analyzes them for compliance with a security standard (e.g., PCI-DSS, GDPR), and generates a detailed compliance report. The script should:
+      - Identify and report on any non-compliant activities (e.g., unauthorized access, data breaches).
+      - Generate alerts for critical violations.
+      - Maintain an audit trail of all activities and ensure that logs are securely archived for future reference.
+
+### **Performance Optimization and Advanced Scripting Techniques**
+
+13. **Script Performance Profiling**:
+    - Write a script that profiles another shell script's performance. The script should:
+      - Measure the execution time of each command or function within the script.
+      - Identify and report on bottlenecks (commands or functions that take the longest to execute).
+      - Suggest optimizations, such as parallel execution, algorithm improvements, or more efficient use of system resources.
+
+14. **Parallel Processing with Load Balancing**:
+    - Write a script that distributes a large computational task across multiple servers. The script should:
+      - Split the task into smaller chunks and distribute them to the servers.
+      - Monitor the progress of each server and dynamically reassign tasks to balance the load.
+      - Aggregate the results from all servers and handle any failures gracefully (e.g., by retrying failed tasks on another server).
+
+15. **Advanced Signal Handling and Process Management**:
+    - Write a script that manages multiple long-running processes. The script should:
+      - Allow the user to start, stop, and restart individual processes.
+      - Handle signals such as `SIGTERM`, `SIGHUP`, and `SIGINT` to perform cleanups or reload configurations without stopping the processes.
+      - Implement a watchdog mechanism that automatically restarts any process that crashes or becomes unresponsive.
+
+### **Automation with Advanced APIs and Tools**
+
+16. **Complex API Orchestration**:
+    - Write a script that orchestrates a multi-step process involving several APIs from different services (e.g., AWS, GitHub, and Slack). The script should:
+      - Trigger a CI/CD pipeline on GitHub when a new commit is detected.
+      - Deploy the build to AWS and run automated tests.
+      - Post a summary of the deployment and test results to a Slack channel.
+      - Handle errors at any stage and roll back the deployment if necessary.
+
+17. **Automated Data Pipeline Management**:
+    - Write a script that automates the entire lifecycle of a data pipeline. The script should:
+      - Extract data from multiple sources (e.g., databases, APIs, files).
+      - Transform the data according to business logic (e.g., data cleaning, aggregation).
+      - Load the processed data into a data warehouse or data lake.
+      - Monitor the pipeline for failures or delays, trigger alerts, and retry failed steps.
+
+18. **Serverless Function Automation**:
+    - Write a script that automates the deployment and management of serverless functions (e.g., AWS Lambda, Azure Functions, Google Cloud Functions). The script should:
+      - Package and deploy the serverless function with versioning.
+      - Set up triggers (e.g., HTTP requests, cloud storage events) for the function.
+      - Monitor function performance, automatically scale it based on usage patterns, and update the configuration as needed.
+
+### **Challenge Questions**
+
+19. **Dynamic Code Generation and Execution**:
+    - Write a script that dynamically generates and executes code based on user input or external data. The script should:
+      - Generate scripts in multiple languages (e.g., Bash, Python, Ruby) based on the user's preferences.
+      - Validate the generated code for security risks before execution.
+      - Execute the generated code in a controlled environment and capture the output for further processing.
+
+20. **Distributed Systems Automation**:
+    - Write a script that manages a distributed system across multiple data centers. The script should:
+      - Ensure consistent configuration and deployment across all nodes.
+      - Implement a consensus algorithm (e.g., Raft or Paxos) to manage configuration changes and state synchronization.
+      - Monitor the health of the system and automatically recover from failures, ensuring high availability.
+
+21. **Advanced Data Encryption and Decryption**:
+    - Write a script that encrypts and decrypts large datasets (e.g., files or databases) using advanced cryptographic algorithms (e.g., AES, RSA). The script should:
+      - Support both symmetric and asymmetric encryption methods.
+      - Handle key management securely, including the generation, storage, and rotation of keys.
+      - Ensure that the encrypted data can be securely shared across different environments or systems without exposing sensitive information.
+
+These advanced questions are designed to challenge your expertise in shell scripting and push you to explore complex scenarios, optimize performance, and enhance security. They require a deep understanding of scripting concepts and practical experience in automating real-world tasks.
