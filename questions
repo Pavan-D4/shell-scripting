@@ -7,6 +7,31 @@ Here’s a set of basic shell scripting questions that cover a wide range of fun
 
    - **Commands covered**: `mkdir`, `ls`, `test`
 
+    #!/bin/bash
+
+    # Get the current working directory
+    present_dir=$(pwd)
+    echo "Current working directory: $present_dir"
+
+    # Set the directory name to 'backup'
+    dir_nm="backup"
+
+    # Check if the directory already exists
+    if [ ! -d "$dir_nm" ]; then
+        # If it doesn't exist, create the directory
+        mkdir "$dir_nm"
+        echo "Directory '$dir_nm' created."
+    else
+        echo "Directory '$dir_nm' already exists."
+    fi
+
+    # List all directories in the current working directory
+    echo "Listing all directories in $present_dir:"
+    ls -d */
+
+    echo "End of script"
+
+
 2. **File Creation and Permissions**:
    - Write a script that creates an empty file named `notes.txt`, changes its permissions to make it readable and writable only by the owner, and then verifies the permissions.
 
