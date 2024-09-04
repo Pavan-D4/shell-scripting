@@ -1,0 +1,173 @@
+Here’s a set of basic shell scripting questions that cover a wide range of fundamental Linux commands. These questions are designed to help you practice and reinforce your understanding of common commands and their usage in scripts.
+
+### **File and Directory Management**
+
+1. **Create and List Directories**:
+   - Write a script that creates a directory named `backup` in the current directory if it doesn’t already exist. Then, list all the directories in the current working directory.
+
+   - **Commands covered**: `mkdir`, `ls`, `test`
+
+2. **File Creation and Permissions**:
+   - Write a script that creates an empty file named `notes.txt`, changes its permissions to make it readable and writable only by the owner, and then verifies the permissions.
+
+   - **Commands covered**: `touch`, `chmod`, `ls -l`
+
+3. **Copy, Move, and Rename Files**:
+   - Write a script that copies a file named `source.txt` to `destination.txt`. Then, move `destination.txt` to the `backup` directory created earlier and rename it to `backup.txt`.
+
+   - **Commands covered**: `cp`, `mv`, `rename`
+
+4. **Delete Files and Directories**:
+   - Write a script that deletes all files in the current directory that end with `.log`. Then, delete the `backup` directory created earlier if it is empty.
+
+   - **Commands covered**: `rm`, `rmdir`
+
+### **Text Processing**
+
+5. **Basic Text Search**:
+   - Write a script that searches for the word "error" in a file named `system.log` and displays all matching lines.
+
+   - **Commands covered**: `grep`
+
+6. **Count Lines, Words, and Characters**:
+   - Write a script that counts the number of lines, words, and characters in a file named `notes.txt`.
+
+   - **Commands covered**: `wc`
+
+7. **Sorting and Uniqueness**:
+   - Write a script that sorts the contents of a file named `items.txt` alphabetically and removes any duplicate lines. Save the result to a new file named `unique_items.txt`.
+
+   - **Commands covered**: `sort`, `uniq`
+
+8. **Text Replacement**:
+   - Write a script that replaces all occurrences of the word "foo" with "bar" in a file named `data.txt` and saves the result to `new_data.txt`.
+
+   - **Commands covered**: `sed`
+
+### **File Permissions and Ownership**
+
+9. **Change File Ownership**:
+   - Write a script that changes the owner of a file named `project.txt` to a user named `user123`. Then, verify the change.
+
+   - **Commands covered**: `chown`, `ls -l`
+
+10. **Find Files by Permissions**:
+    - Write a script that finds all files in the `/home` directory that are executable by the owner but not by others.
+
+    - **Commands covered**: `find`
+
+### **System Information and Monitoring**
+
+11. **Disk Usage**:
+    - Write a script that displays the disk usage of the `/home` directory in a human-readable format.
+
+    - **Commands covered**: `du`, `df`
+
+12. **System Uptime**:
+    - Write a script that displays how long the system has been running.
+
+    - **Commands covered**: `uptime`
+
+13. **Memory Usage**:
+    - Write a script that displays the current memory usage of the system.
+
+    - **Commands covered**: `free`
+
+14. **Check Running Processes**:
+    - Write a script that displays a list of all currently running processes along with their CPU and memory usage.
+
+    - **Commands covered**: `ps`, `top`
+
+### **Networking**
+
+15. **Check Network Connectivity**:
+    - Write a script that pings `google.com` five times and displays whether the host is reachable.
+
+    - **Commands covered**: `ping`
+
+16. **Display Active Network Interfaces**:
+    - Write a script that lists all active network interfaces on the system.
+
+    - **Commands covered**: `ifconfig`, `ip`
+
+17. **Check Open Ports**:
+    - Write a script that checks for all open ports on the system and displays the results.
+
+    - **Commands covered**: `netstat`, `ss`
+
+### **User and Group Management**
+
+18. **Create a New User**:
+    - Write a script that creates a new user named `testuser` with a home directory and sets a password for the user.
+
+    - **Commands covered**: `useradd`, `passwd`
+
+19. **Add User to Group**:
+    - Write a script that adds `testuser` to a group named `developers` and then verifies the group membership.
+
+    - **Commands covered**: `usermod`, `groups`
+
+20. **Display User Information**:
+    - Write a script that displays detailed information about the current user.
+
+    - **Commands covered**: `id`, `whoami`
+
+### **Process Management**
+
+21. **Start and Kill Processes**:
+    - Write a script that starts a background process that runs `sleep 60`, lists all running processes, and then kills the `sleep` process.
+
+    - **Commands covered**: `&`, `ps`, `kill`
+
+22. **Monitor CPU Usage of a Process**:
+    - Write a script that monitors the CPU usage of a process with a specific PID (provided as an argument to the script) every 5 seconds.
+
+    - **Commands covered**: `top`, `ps`
+
+23. **Automate a Task with `cron`**:
+    - Write a script that sets up a `cron` job to run a backup script every day at midnight.
+
+    - **Commands covered**: `crontab`, `cron`
+
+### **Archiving and Compression**
+
+24. **Create a Compressed Archive**:
+    - Write a script that creates a tarball (`.tar.gz`) of a directory named `my_project` and saves it as `my_project_backup.tar.gz`.
+
+    - **Commands covered**: `tar`, `gzip`
+
+25. **Extract a Compressed Archive**:
+    - Write a script that extracts the contents of `my_project_backup.tar.gz` to a new directory named `restored_project`.
+
+    - **Commands covered**: `tar`, `gunzip`
+
+### **Package Management**
+
+26. **Install a Package**:
+    - Write a script that checks if `curl` is installed on the system. If it isn’t, the script should install `curl` using the appropriate package manager.
+
+    - **Commands covered**: `dpkg`, `apt-get`, `yum`, `rpm`
+
+27. **Update System Packages**:
+    - Write a script that updates all installed packages on the system to their latest versions.
+
+    - **Commands covered**: `apt-get`, `yum`, `dnf`
+
+28. **Remove a Package**:
+    - Write a script that uninstalls the `apache2` package and removes its configuration files.
+
+    - **Commands covered**: `apt-get`, `yum`, `rpm`
+
+### **Miscellaneous**
+
+29. **Create a Soft Link**:
+    - Write a script that creates a soft link named `link_to_notes` pointing to the `notes.txt` file.
+
+    - **Commands covered**: `ln -s`
+
+30. **Search for a Pattern in Files**:
+    - Write a script that searches for the word "TODO" in all `.sh` files in the current directory and lists the filenames that contain this word.
+
+    - **Commands covered**: `grep`, `find`
+
+These questions cover the foundational commands that are essential for working in a Linux environment. Practicing these will help you become proficient in writing basic shell scripts and managing a Linux system effectively.
