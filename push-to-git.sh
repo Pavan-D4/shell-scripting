@@ -13,7 +13,7 @@ git add .
 # Commit the changes with a message containing the current date and time
 git commit -m "Auto-commit: $(date)"
 
-# Push the changes to the remote repository
-git push origin main 
+# Push the changes to the remote repo
+git push https://$1@github.com/Pavan-D4/shell-scripting.git main 
 
 echo "Changes pushed to Git repository!"
