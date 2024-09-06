@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+   echo "argment pas chey bey"
+  exit 1;
+else 
+  echo "passed $1 as argument"
+fi
+echo "checking your patience :"; sleep 1000000
+echo "script end"
