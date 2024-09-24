@@ -9,7 +9,10 @@ if [ -z $file_nm ]; then
 else
    if [ -e $file_nm ]; then
       echo "file exits"
-      
-#pending...
+      if [ -r $file_nm ]; then
+	echo "file is readble"
+      else 
+         echo "file is not readable"
+      fi
    fi
 fi
